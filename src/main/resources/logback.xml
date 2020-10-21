@@ -1,0 +1,44 @@
+<configuration scan="true">
+<appender name="consoleAppender" class = "ch.qos.logback.core.ConsoleAppender">
+    <encoder class="net.logstash.logback.encoder.LogstashEncoder"/>
+</appender>
+
+<logger name="jsonLogger" additivity="false" level="INFO">
+<appender-ref ref="consoleAppender" />
+</logger>
+
+    <!--    print only messages of level ERROR and above in org.hibernate-->
+    <logger name="org.hibernate" level="ERROR"/>
+
+    <!--Log Generated SQL&#45;&#45; DEBUG Or ERROR-->
+    <logger name="org.hibernate.SQL" level="ERROR"/>
+
+    <!--    Log the Input parameters&#45;&#45; TRACE Or Error-->
+    <logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="ERROR"/>
+
+    <!--    Log the Output Values&#45;&#45; TRACE Or ERROR-->
+    <logger name="org.hibernate.type.descriptor.sql.BasicExtractor" level="ERROR"/>
+
+    <!--    Dial Down the Spring Framework Logging-->
+
+    <logger name = "org.springframework" level="ERROR"/>
+    <logger name = "org.springframework.beans" level="ERROR"/>
+    <logger name = "org.springframework.context" level="ERROR"/>
+    <logger name = "org.springframework.core" level="ERROR"/>
+    <logger name = "org.springframework.security" level="ERROR"/>
+    <logger name = "org.springframework.beans.CachedIntrospectionResults" level="ERROR"/>
+    <logger name = "org.springframework.jdbc.core" level="ERROR"/>
+    <logger name = "org.springframework.transaction.support.TransactionSynchronizationManager" level="ERROR"/>
+    <logger name = "org.springframework.core.env.PropertySourcesPropertyResolver" level="ERROR"/>
+    <logger name = "org.springframework.context.annotation.ConfigurationClassUtils" level="ERROR"/>
+    <logger name = "org.springframework.jndi" level="ERROR"/>
+    <logger name="net.sf" level="ERROR"/>
+    <logger name="com.github" level="ERROR"/>
+    <logger name="org.thymeleaf" level="ERROR"/>
+    <logger name="org.dbunit" level="ERROR"/>
+    <logger name="springfox.documentation" level="ERROR"/>
+
+<root level="INFO">
+    <appender-ref ref="consoleAppender"/>
+</root>
+</configuration>
