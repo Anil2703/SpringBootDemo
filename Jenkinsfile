@@ -1,11 +1,10 @@
 #!groovy
-//@Library(["pipelineuk@2.8.0","pipelineuk-sec@3.1.0"]) _
 
 //
 // Spring Boot Project with Maven and Java
 //
 pipeline {
-    agent{
+    agent {
         label 'maven'
     }
 
